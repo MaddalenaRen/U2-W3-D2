@@ -68,3 +68,6 @@ setInterval(() => {
     sessionStorage.setItem("timeSpent", timeSpent);  // Salva nel sessionStorage
     contatore.innerText = timeSpent; // Aggiorna la visualizzazione del contatore
 }, 1000);
+
+//ogni volta che aggiorniamo il contatorare ricomincia da zero
+//ma se la pagina non viene chiusa, il valore del contatore viene salvato e il contatore riparte da dove era rimasto
