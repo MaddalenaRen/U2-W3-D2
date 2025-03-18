@@ -50,23 +50,23 @@ removeButton.addEventListener('click', function (event) {
 
 //Contatore
 // Recupero il valore salvato in sessionStorage
-let timeSpent = sessionStorage.getItem('timeSpent');
+let tempoTrascorso = sessionStorage.getItem('tempoTrascorso');
 
 //se non c'è alcun valore salvato, il contatore parte da zero
 
-if (!timeSpent) {
-    timeSpent = 0;
+if (!tempoTrascorso) {
+    tempoTrascorso = 0;
 } else {
-    timeSpent = parseInt(timeSpent);
+    tempoTrascorso = parseInt(tempoTrascorso);
 };
 
 // Imposta il valore iniziale del contatore
 const contatore = document.getElementById('counterDisplay');
 
 setInterval(() => {
-    timeSpent++; //incrementa il contatore ogni secondo
-    sessionStorage.setItem("timeSpent", timeSpent);  // Salva nel sessionStorage
-    contatore.innerText = timeSpent; // Aggiorna la visualizzazione del contatore
+    tempoTrascorso++; //incrementa il contatore ogni secondo
+    sessionStorage.setItem("tempoTrascorso", tempoTrascorso);  // Salva nel sessionStorage
+    contatore.innerText = tempoTrascorso; // Aggiorna la visualizzazione del contatore
 }, 1000);
 
 //ogni volta che aggiorniamo il contatorare ricomincia da zero
