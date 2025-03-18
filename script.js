@@ -46,3 +46,25 @@ removeButton.addEventListener('click', function (event) {
     aggiornaSavedNAme();
     alert("Nome rimosso!");
 });
+
+
+//Contatore
+// Recupero il valore salvato in sessionStorage
+let timeSpent = sessionStorage.getItem('timeSpent');
+
+//se non c'è alcun valore salvato, il contatore parte da zero
+
+if (!timeSpent) {
+    timeSpent = 0;
+} else {
+    timeSpent = parseInt(timeSpent);
+};
+
+// Imposta il valore iniziale del contatore
+const contatore = document.getElementById('counterDisplay');
+
+setInterval(() => {
+    timeSpent++; //incrementa il contatore ogni secondo
+    sessionStorage.setItem("timeSpent", timeSpent);  // Salva nel sessionStorage
+    contatore.innerText = timeSpent; // Aggiorna la visualizzazione del contatore
+}, 1000);
